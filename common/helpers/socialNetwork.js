@@ -5,15 +5,18 @@ import yelpIcon from "../../public/socialNetworkIcons/Yelp.png"
 const socialNetworkItems = [
     {
         href:"https://www.facebook.com/profile.php?id=100075400827302",
-        iconRef:facebookIcon
+        iconRef:facebookIcon,
+        height: "30px"
     },
     {
         href:"",
-        iconRef:instagramIcon
+        iconRef:instagramIcon,
+        height: "30px"
     },
     {
         href:"https://www.yelp.com/biz/mily-travel-tampa",
-        iconRef:yelpIcon
+        iconRef:yelpIcon,
+        height: "40px"
     },
 ]
 export default socialNetworkItems;

@@ -4,10 +4,108 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Nunito', sans-serif;
+  border: 0;
 }
-
+.shopContainer{
+  background-image: url("../public/authPic.png");
+  height: 89vh;
+}
+.shopFormContainer{
+  background-color: #ffffff96;
+  width: 350px;
+  padding: 50px;
+  border-radius: 15px;
+}
 .MilyLogo{
   width: 100px;
+}
+.contact-container{
+  background: white;
+  width: 80%;
+  height: 85%;
+  margin: auto;
+  padding: 30px;
+}
+.redButton {
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
+  color: white;
+  background-color:#AF353D;
+}
+.hero-section-button{
+  height: 30px;
+  width: 150px;
+  border-radius: 50px;
+}
+.home-page-footer{
+  background: linear-gradient(123deg,#18465E, white);
+  height: 85vh;
+  display: flex;
+}
+.logoFromContact{
+  width: 90px;
+  bottom: 20px;
+  transform: translate(0%,25%);
+}
+.HomeMiddleSection{
+  background-image: url("../public/Bg-Circle.png");
+  background-size: contain;
+}
+.buttonsContainer button{
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  width: 50px;
+  height: 25px;
+}
+.activeButton{
+  background: linear-gradient(rgb(23, 0, 231), rgb(207, 13, 13));
+  color: white;
+  border: 0px;
+}
+.combosContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: "20px";
+  justify-items: center;
+}
+.goBackComboButton{
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  align-items: center;
+  margin: auto;
+  margin-bottom: auto;
+  margin-bottom: 25px;
+}
+.seeComboDialogButton{
+  width: 100px;
+  height: 25px;
+  margin: 10px;
+  background: #C96B4F;
+  border-radius: 15px;
+  color: white;
+}
+.authContainer{
+  width: 100%;
+  height: 87vh;
+  background-image: url("../public/authPic.png");
+  background-size: cover;
+}
+.formContainer{
+  margin: 50px;
+  margin-right: 150px;
+  width: 50vw;
+  height: 50vh;
+  margin-top: 50px;
+  background: #ffffff96;
+  padding: 50px;
+  border-radius: 15px;
+}
+
+button{
+  border: 0;
 }
 
 a {
@@ -17,6 +115,96 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.flex{
+  display: flex;
+}
+.justify-space-between{
+  justify-content: space-between;
+}
+.justify-space-around{
+  justify-content: space-around;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-space-evenly{
+  justify-content: space-evenly;
+}
+.align-center{
+  align-items: center;
+  align-content: center;
+}
+.align-end{
+  align-items: flex-end;
+  align-content: flex-end;
+}
+.align-start{
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.text-center{
+  text-align: center;
+}
+.flex-column{
+  flex-direction: column;
+}
+.navbarLinks{
+  margin-right: 20px;
+}
+.navbarLinks a{
+  margin-right: 20px;
+}
+
+.bg-black{
+  background-color: rgba(0, 0, 0, 0.59);
+}
+.bg-red{
+  background-color: #AF353D;
+}
+.bg-blue{
+  background-color: #1F569D;
+}
+.font-color-w{
+  color: white;
+}
+.width-40{
+  width: 40%;
+}
+.width-100{
+  width: 100vw;
+}
+.width-full{
+  width: 100%;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.box-shadow-basic{
+  box-shadow: rgb(99, 99, 99) 0px 2px 15px 0px;
+}
+.grandPaImg{
+  z-index: -1;
+}
+
+.height-67{
+  min-height: 67vh;
+}
+
+.main {
+  background-image: url("../public/happyFamily.webp");
+  background-size: cover;
+  background-position: 0px -75px;
+}
+
+@media (min-width: 428px) {
+  .navbarLinks a{
+    font-size: medium;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

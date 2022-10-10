@@ -6,9 +6,9 @@ function Navbar({children}) {
 
   return (
     <>
-      <navbar>
-          <img style={{width: "100px"}} src={MilyTravel.src} alt='MilyTravel'/>
-          <div>
+      <navbar style={{height: "80px"}} className="flex justify-space-between align-center">
+          <img style={{width: "70px", marginLeft: "10px"}} src={MilyTravel.src} alt='MilyTravel'/>
+          <div className="align-center navbarLinks flex justify-center">
             <Link href={"/auth/login"}>Iniciar Sesión</Link>
             <Link href={"/auth/register"}>Suscribirse</Link>
           </div>
