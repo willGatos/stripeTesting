@@ -1,10 +1,20 @@
-import React from 'react'
+import MilyTravel from "../../public/MilyTravel.png"
+import Link from "next/Link"
+import Avatar from "@mui/material"
 
-function Navbar() {
+function Navbar({children}) {
+
   return (
-    <navbar>
-        <div>Hola mundo</div>
-    </navbar>
+    <>
+      <navbar>
+          <img style={{width: "100px"}} src={MilyTravel.src} alt='MilyTravel'/>
+          <div>
+            <Link href={"/auth/login"}>Iniciar Sesión</Link>
+            <Link href={"/auth/register"}>Suscribirse</Link>
+          </div>
+      </navbar>
+      {children}
+    </>
   )
 }
 

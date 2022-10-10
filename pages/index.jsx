@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Navbar from '../common/components/Navbar'
 import socialNetworkItems from '../common/helpers/socialNetwork'
 import contactItems from '../common/helpers/contact'
 export default function Home() {
@@ -13,11 +12,9 @@ export default function Home() {
         <meta name="description" content="Mily Travel es un servicio para remesas y Combos alimenticios hacia Cuba con garatía de entrega." />
         <link rel='canonical' href='http://www.milytravel.com'/>
         <link rel='canonical' href='http://milytravel.com'/>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/MilyTravel.png" />
       </Head>
 
-
-      <Navbar/>
       <main className={styles.main}>
         <div>
           <h3>Ayuda a tus seres queridos ahora mismo</h3>
