@@ -1,129 +1,53 @@
-import { useState } from 'react'
-import Head from 'next/head'
+import React from 'react'
+import combos from '../common/helpers/combosRelationship'
 import Image from 'next/image'
-import Link from 'next/Link'
-import BarInput from '../common/components/BarInput'
-import BarInputMultirow from '../common/components/BarInputMultirow'
-import ComboCarousel from '../common/components/ComboCarousel'
-
-import grandpaImage from "../public/excited-grandpa.png"
-import ArrowRight from "../public/ArrowRight.svg"
-import MilyTravel from "../public/MilyTravel.png"
-
-import socialNetworkItems from '../common/helpers/socialNetwork'
-import contactItems from '../common/helpers/contact'
-
-export default function Home() {
-  const [sendEmailObject, setSendEmailObject] = useState({
-    name: "",
-    email: "",
-    emailBody: "",
+function App() {
+    const getToWork= ()=>{
+        fetch("http://localhost:3000/api/create-checkout-session", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      items: [
+        { id: 1, quantity: 1 },
+      ],
+    }),
+  }) .then(res => {
+    if (res.ok) return res.json()
+    return res.json().then(json => Promise.reject(json))
   })
-
-
+  .then(({ url }) => {
+    window.location = url
+  })
+  .catch(e => {
+    console.error(e.error)
+  })
+    }
   return (
-    <div>
-      <Head>
-        <title>Mily Travel</title>
-        <meta name="description" content="Mily Travel es un servicio para remesas y Combos alimenticios hacia Cuba con garatía de entrega." />
-        <link rel='canonical' href='http://www.milytravel.com'/>
-        <link rel='canonical' href='http://milytravel.com'/>
-        <link rel="icon" href="/MilyTravel.png" />
-      </Head>
-
-      <main className="main height-67 flex justify-center align-end flex-column">
-        <div className='width-40 height-67 font-color-w bg-black flex justify-center align-start flex-column'>
-          <div style={{padding: "0 50px"}} >
-            <h3>Ayuda a tus seres queridos ahora mismo</h3>
-            <p>Enviales una pequeña remesa o uno de nuestros suplicios alimenticios.</p>
-            <button className='hero-section-button bg-red font-color-w text-center flex justify-center align-center'>
-              Enviar Remesa 
-              <img 
-                style={{width: "15px",marginLeft: "10px"}}
-                src={ArrowRight.src} alt=">"
-              />
-            </button>
-          </div>
-        </div>
-      </main>
-
-      <section className='HomeMiddleSection' style={{margin: "70px 0"}}>
-        <div className='flex flex-column justify-center align-center text-center'>
-          <h3>Seleccione el combo correcto</h3>
-          <p>Ayuda a tus seres queridos ahora mismo</p>
-          <ComboCarousel/>
-          <Link
-            style={{margin: "25px 0"}}
-            href={"/seeCombos"}
-            >
-            <div style={{margin: "15px"}} className='hero-section-button bg-red font-color-w text-center flex justify-center align-center'>
-              Ver Todos
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      <footer className='home-page-footer' >
-        <div
-          style={{
-            borderRadius: "7px",
-          }}
-          className='contact-container flex justify-space-evenly align-center box-shadow-basic relative'>
-          <section style={{width: "40%"}} className='flex flex-column'>
-            <div>
-              <h3>Estamos a tú disposición</h3>
-              <p>¿Cómo podemos ayudarte?</p>
-            </div>
-              <BarInput
-                name={"name"}
-                label={"Nombre"}
-                value={sendEmailObject.name}
-                object={sendEmailObject}
-                setObject={setSendEmailObject}
-              />
-              <BarInput
-                name={"email"}
-                label={"Email"}
-                value={sendEmailObject.email}
-                object={sendEmailObject}
-                setObject={setSendEmailObject}
-              />
-              <BarInputMultirow
-                name={"emailBody"}
-                row={"4"}
-                label={"Mensaje"}
-                value={sendEmailObject.emailBody}
-                object={sendEmailObject}
-                setObject={setSendEmailObject}
-              />
-              <button
-                style={{marginTop: "20px"}}
-                className='hero-section-button bg-red font-color-w text-center flex justify-center align-center'
-              >
-                Enviar
-              </button>
-          </section>
-          <hr style={{height: "250px"}} className="absolute"/>
-          <section style={{width: "37%"}} className='flex flex-column justify-center align-center'>
-            <div className='flex flex-column'>
-            {contactItems.map((WayToContact, key)=>(
-              <a style={{marginBottom: "20px"}} className='flex align-center' target="_blank" key={key} href={WayToContact.href}>
-                <img style={{height: WayToContact.height, marginRight: "15px"}} src={WayToContact.iconRef.src}/>
-                <span>{WayToContact.text}</span>
-              </a>
-            ))}
-            </div>
-            <div className='width-full flex justify-space-around align-center'>
-            {socialNetworkItems.map((socialNetwork, key)=> (
-              <a target="_blank" key={key} href={socialNetwork.href}>
-                <img style={{height: socialNetwork.height}} src={socialNetwork.iconRef.src}/>
-              </a>
-            ))}
-            </div>
-          </section>
-          <img className='logoFromContact absolute' src={MilyTravel.src} alt=""/>
-        </div>
-      </footer>
+    <div style={{
+        display: "flex",
+justifyContent: "center",
+flexDirection: "column",
+width: "300px",
+margin: "auto",
+alignItems: "center",
+alignContent: "center",
+    }}>
+        <Image 
+            width={"200px"}
+            height={"300px"}
+            src={combos[0].image.src}
+            alt={combos[0].name}
+        />
+        <button 
+        style={{width: "200px",
+            background: "#f24853",
+            color: "white",
+            borderRadius: "15px",}}
+        onClick={()=>getToWork()}>Me interesa</button>
     </div>
   )
 }
+
+export default App

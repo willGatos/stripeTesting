@@ -6,6 +6,15 @@ body {
   font-family: 'Nunito', sans-serif;
   border: 0;
 }
+
+a {
+  color: #0a74a7;
+  text-decoration: none;
+  margin: 15px
+}
+iframe{
+  height: 50px !important;
+}
 .shopContainer{
   background-image: url("../public/authPic.png");
   height: 89vh;
@@ -106,11 +115,6 @@ body {
 
 button{
   border: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 * {

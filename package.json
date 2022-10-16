@@ -21,7 +21,8 @@
     "react-lazy-load-image-component": "^1.5.5",
     "react-multi-carousel": "^2.8.2",
     "react-responsive-carousel": "^3.2.23",
-    "react-simply-carousel": "^8.4.0"
+    "react-simply-carousel": "^8.4.0",
+    "stripe": "^10.14.0"
   },
   "devDependencies": {
     "eslint": "8.24.0",

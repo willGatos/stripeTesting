@@ -10,33 +10,26 @@ import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 
-function PasswordBarInput({label, value, object, setObject, sx={}}) {
+function PasswordBarInput({name, label, value, object, setObject, sx={}}) {
 
     const [showPassword, setShowPassword] = useState(false)
 
     const handleData = input => e =>{
-      console.log(object,)
         setObject({...object, [input]: e.target.value})
     }
 
-    const handleClickShowPassword = ()=> setShowPassword(!showPassword)
-
-    const handleMouseDownPassword = (event) => {
-      event.preventDefault();
-    };
-
     return (<>
-    <FormControl sx={sx} variant="standard">
-        <InputLabel htmlFor="standard-adornment-password">{label}</InputLabel>
-        <Input
-          id="standard-adornment-password"
-          type={showPassword ? 'text' : 'password'}
-          value={value}
-          onChange={handleData(label)}
-          required
-          />
-        </FormControl>
-    </>
+            <FormControl sx={sx} variant="standard">
+                <InputLabel htmlFor="standard-adornment-password">{label}</InputLabel>
+                <Input
+                  name={name}
+                  type={showPassword ? 'text' : 'password'}
+                  value={value}
+                  onChange={handleData(name)}
+                  required
+                />
+            </FormControl>
+            </>
    )
 }
 
