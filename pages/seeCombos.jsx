@@ -6,7 +6,7 @@ import Card from "@mui/material/Card"
 import Link from "next/Link"
 import LeftArrow from "../public/LeftArrow.svg"
 
-function seeCombos() {
+function SeeCombos() {
   const [actualFilter, setActualFilter] = useState("")
   const [selectedCombo, setSelectedCombo] = useState(combos[0])
   const [arrayFiltered, setArrayFiltered] = useState(combos)
@@ -94,4 +94,4 @@ function seeCombos() {
   )
 }
 
-export default seeCombos
+export default SeeCombos
